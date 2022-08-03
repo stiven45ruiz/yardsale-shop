@@ -1,20 +1,29 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { Menu } from '../organism/Menu';
+import { MyOrder } from '../../containers/MyOrder';
+import AppContext from '../../context/AppContext';
+import iconMenu from '../../assets/icons/icon_menu.svg'
+import logYardSale from '../../assets/logos/logo_yard_sale.svg'
+import shopingCart from '../../assets/icons/icon_shopping_cart.svg'
 import '../../styles/components/Header.scss';
-import MyAccount from '../../containers/MyAccount.jsx'
 
 const Header = () => {
 
+  const {state} = useContext(AppContext);
+  const [togleOrders, setTogleorders] = useState(false)
   const [toggle, setToggle] = useState(false);
   const hanbleToggle = () =>{
     setToggle(!toggle)
   }
 
   return (
-    <nav>
-      <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
+    <nav className='headerBar'>
+      <img src={iconMenu} alt="menuIcon" className="menu-icon" />
 
       <div className="navbar-left">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+        <picture className='container__logo'>
+          <img src={logYardSale} alt="logo" className="logo" />
+        </picture>
 
         <ul>
           <li>
@@ -43,13 +52,22 @@ const Header = () => {
           <li className="navbar-email" onClick={hanbleToggle}>
             platzi@example.com
           </li>
-          <li className="navbar-shopping-cart">
-            <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" />
-            <div>2</div>
+          <li 
+            className="navbar-shopping-cart" 
+            onClick={() => setTogleorders(!togleOrders)}
+            >
+            <img src={shopingCart} alt="shopping cart" />
+            {state.cart.length > 0 ? <div>{state.cart.length}</div>: null}
           </li>
         </ul>
       </div>
-      {!!toggle && <MyAccount/>}
+      {!!toggle && <Menu/>}
+      {!!togleOrders && 
+        <MyOrder 
+          setTogleorders={setTogleorders}
+          togleOrders={togleOrders}
+        />
+      }
     </nav>
   );
 };

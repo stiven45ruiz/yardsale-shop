@@ -1,19 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Order } from '../components/molecules/Order'
+import AppContext from '../context/AppContext'
+import '../styles/components/Orders.scss'
+
+import arrowIcon from '../assets/icons/flechita.svg'
+
 
 const MyOrders = () => {
+
+  const {state} = useContext(AppContext);
+  
   return (
     <div className="my-order">
-    <div className="my-order-container">
-      <h1 className="title">My orders</h1>
-
-      <div className="my-order-content">
-          <Order/>
-          <Order/>
-          <Order/>
+      <div className="my-order-container">
+       
       </div>
     </div>
-  </div>
   )
 }
 

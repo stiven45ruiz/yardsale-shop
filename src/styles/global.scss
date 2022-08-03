@@ -1,3 +1,4 @@
+@use 'vars' as *;
 body {
   padding: 0;
   margin: 0;
@@ -7,5 +8,21 @@ body {
 .layout{
    display: flex;
    justify-content: center;
-   align-items: center;
+}
+
+
+.primary-button {
+  background-color: $hospital-green;
+  border-radius: 8px;
+  border: none;
+  color: $white;
+  width: 100%;
+  cursor: pointer;
+  font-size: $md;
+  font-weight: bold;
+  height: 50px;
+}
+.primary-button:hover {
+  background-color: $hospital-dark-green;
+  
 }

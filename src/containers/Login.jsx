@@ -1,37 +1,48 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 const Login = () => {
+
+  const form = useRef(null);
+
+  const hanbleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(form.current);
+    const data = {
+      username: formData.get('email'),
+      password: formData.get('password')
+    };
+    console.log(data)
+  }
+
   return (
-    <div classNameName="login">
+    <div className="login">
       <div className="form-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
 
-        <form action="/" className="form">
-          <label for="email" className="label">
+        <form action="/" className="form" ref={form}>
+          <label htmlFor="email" className="label">
             Email address
           </label>
           <input
             type="text"
-            id="email"
-            placeholder="platzi@example.cm"
+            name="email"
             className="input input-email"
           />
 
-          <label for="password" className="label">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
             type="password"
-            id="password"
-            placeholder="*********"
+            name="password"
             className="input input-password"
           />
 
-          <input
+          <button
+            onClick={hanbleSubmit}
             type="submit"
-            value="Log in"
             className="primary-button login-button"
-          />
+          >Log In</button>
           <a href="/">Forgot my password</a>
         </form>
 

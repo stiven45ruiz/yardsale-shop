@@ -2,15 +2,23 @@
 
 nav {
   display: flex;
+  width: 80vw;
   justify-content: space-between;
+  align-items: center;
   padding: 0 24px;
   border-bottom: 1px solid $very-light-pink;
 }
-.menu {
+.menu-icon {
   display: none;
 }
-.logo {
+.container__logo{
+  display: flex;
+  align-items: center;
+}
+.container__logo > .logo {
   width: 100px;
+  margin: 0 20px;
+  display: block;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -63,7 +71,11 @@ nav {
   align-items: center;
 }
 @media (max-width: 640px) {
-  .menu {
+  nav {
+    width: auto;
+    
+  }
+  .menu-icon {
     display: block;
   }
   .navbar-left ul {
