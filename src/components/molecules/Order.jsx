@@ -19,7 +19,9 @@ const Order = ({productCart}) => {
       <img 
         src={close} 
         alt='close' 
-        onClick={() => handleRemove(productCart)}/>
+        onClick={() => handleRemove(productCart)}
+        className='remove__icon'  
+      />
     </div>
   )
         

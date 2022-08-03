@@ -5,7 +5,6 @@ import { Products } from '../components/organism/Products';
 const Home = () => {
   return (
     <main className="home">
-      <Header />
       <Products />
     </main>
   );

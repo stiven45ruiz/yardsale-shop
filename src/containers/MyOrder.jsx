@@ -17,9 +17,16 @@ const MyOrder = ({setTogleorders, togleOrders}) => {
   return (
     <aside className="product-detail">
     <div className="title-container">
-      <img 
+      <picture 
+        className='arraw__icon'
         onClick={() => setTogleorders(!togleOrders)}
-        src={arrowIcon} alt="arrow"/>
+      >
+        <img 
+          src={arrowIcon} 
+          alt="arrow"
+        />
+      </picture>
+      
       <p className="title">My order</p>
     </div>
 

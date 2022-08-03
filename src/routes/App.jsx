@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Layout } from '../components/Layout';
 import { Home } from '../pages/Home';
-import { SignUp } from '../containers/SignUp';
-import { Login } from '../containers/Login';
+import { SignUp } from '../pages/SignUp';
+import { Login } from '../pages/Login';
 import { RecoveryPass } from '../containers/RecoveryPass';
 import { NotFound } from '../pages/NotFound';
-import { MyOrders } from '../containers/MyOrders';
+import { MyOrders } from '../pages/MyOrders';
 import { MyAccount } from '../containers/MyAccount';
 import { SendEmail } from '../containers/SendEmail';
 import AppContext from '../context/AppContext';

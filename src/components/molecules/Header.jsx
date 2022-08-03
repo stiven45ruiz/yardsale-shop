@@ -1,34 +1,46 @@
 import React, {useState, useContext} from 'react';
 import { Menu } from '../organism/Menu';
 import { MyOrder } from '../../containers/MyOrder';
+import { MenuMovile } from '../organism/MenuMovile';
 import AppContext from '../../context/AppContext';
 import iconMenu from '../../assets/icons/icon_menu.svg'
 import logYardSale from '../../assets/logos/logo_yard_sale.svg'
 import shopingCart from '../../assets/icons/icon_shopping_cart.svg'
 import usericon from '../../assets/icons/user-regular.svg'
 import '../../styles/components/Header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
   const {state} = useContext(AppContext);
+  const [movileMenuToggle, setMovileMenuToggle] = useState(false);
   const [togleOrders, setTogleorders] = useState(false)
   const [toggle, setToggle] = useState(false);
+
   const hanbleToggle = () =>{
     setToggle(!toggle)
   }
 
   return (
     <nav className='headerBar'>
-      <img src={iconMenu} alt="menuIcon" className="menu-icon" />
+      <img 
+        onClick={()=> setMovileMenuToggle(!movileMenuToggle)}
+        src={iconMenu} 
+        alt="menuIcon" 
+        className="menu-icon" 
+      />
 
       <div className="navbar-left">
-        <picture className='container__logo'>
-          <img src={logYardSale} alt="logo" className="logo" />
-        </picture>
+        <Link to='/' className='container__logo'>
+          <picture className='container__logo'>
+            <img src={logYardSale} alt="logo" className="logo" />
+          </picture>
+        </Link>
+        
 
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link to="/">All</Link>
           </li>
           <li>
             <a href="/">Clothes</a>
@@ -67,6 +79,7 @@ const Header = () => {
         </ul>
       </div>
       {!!toggle && <Menu/>}
+      {!!movileMenuToggle && <MenuMovile/>}
       {!!togleOrders && 
         <MyOrder 
           setTogleorders={setTogleorders}

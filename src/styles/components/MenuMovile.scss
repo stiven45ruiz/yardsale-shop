@@ -1,0 +1,39 @@
+@use '../_vars.scss' as *;
+
+.mobile-menu {
+  position: absolute;
+  top: 61px;
+  width: 100%;
+  padding: 24px;
+  background-color: $white;
+  
+  -webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
+  animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: $black;
+  font-weight: bold;
+  /* margin-bottom: 24px; */
+}
+.mobile-menu ul {
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+.mobile-menu ul:nth-child(1) {
+  border-bottom: 1px solid $very-light-pink;
+}
+.mobile-menu ul li {
+  margin-bottom: 24px;
+}
+.email {
+  font-size: $sm;
+  font-weight: 300 !important;
+}
+.sign-out {
+  font-size: $sm;
+  color: $hospital-green !important;
+}
+
+ @-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
