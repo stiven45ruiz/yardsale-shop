@@ -3,11 +3,12 @@
 .desktop__menu{
   position: absolute;
   top: 60px;
-  right: 160px;
+  right: 60px;
   padding: 20px;
   background-color: aliceblue;
   border-radius: 0 0 20px 20px ;
-  border: solid 0.5px rgb(185, 185, 185);
+  border: solid 0.5px  $very-light-pink;
+  border-top: none;
   ul{
     padding: 0;
     li{

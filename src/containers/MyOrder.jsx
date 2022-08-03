@@ -24,6 +24,7 @@ const MyOrder = ({setTogleorders, togleOrders}) => {
     </div>
 
     <div className="my-order-content">
+      <div className='order__items'>
         {
           state.cart.length > 0?
           state.cart.map((productCart)=> (
@@ -34,6 +35,8 @@ const MyOrder = ({setTogleorders, togleOrders}) => {
           ))
           :<p>Sin productos</p>
         }
+      </div>
+        
 
 
       <div className="order">

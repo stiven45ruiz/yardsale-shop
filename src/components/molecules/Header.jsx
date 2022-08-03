@@ -5,6 +5,7 @@ import AppContext from '../../context/AppContext';
 import iconMenu from '../../assets/icons/icon_menu.svg'
 import logYardSale from '../../assets/logos/logo_yard_sale.svg'
 import shopingCart from '../../assets/icons/icon_shopping_cart.svg'
+import usericon from '../../assets/icons/user-regular.svg'
 import '../../styles/components/Header.scss';
 
 const Header = () => {
@@ -49,9 +50,13 @@ const Header = () => {
 
       <div className="navbar-right">
         <ul>
+          <li className='user-icon' onClick={hanbleToggle}>
+            <img src={usericon} alt="userIcon" />
+          </li>
           <li className="navbar-email" onClick={hanbleToggle}>
             platzi@example.com
           </li>
+          
           <li 
             className="navbar-shopping-cart" 
             onClick={() => setTogleorders(!togleOrders)}

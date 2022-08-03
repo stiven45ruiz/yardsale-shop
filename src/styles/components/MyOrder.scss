@@ -48,6 +48,7 @@
   gap: 16px;
   margin-bottom: 24px;
   align-items: center;
+  
 }
 .shopping-cart figure {
   margin: 0;
@@ -64,6 +65,11 @@
 .shopping-cart p:nth-child(3) {
   font-size: $md;
   font-weight: bold;
+}
+.order__items{
+  margin: 10px;
+  max-height: 50vh;
+  overflow-y: scroll;
 }
 
 @media (max-width: 640px) {
